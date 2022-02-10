@@ -1,7 +1,7 @@
 
 # from pip installs and python std
+from typing import Optional
 from os.path import isfile
-
 
 import sys
 
@@ -14,14 +14,15 @@ A function to print a use statement
 @err: list[str]
 @return None
 """
-def usage(err: list[str]) -> None:
+def usage(err: Optional[list[str]]=None) -> None:
 	print("CMD:")
 	print("\tpython main.py <FLAGS> <INPUT FILE>")
 	print("FLAGS:")
 	print("\t-c\tUsed if the file should use the complex run type.\n\t\tHere different tile types can be used\n\t\tand find the path with the least amount of time")
-	print("ERR:")
-	for e in err:
-		print(f"\t{e}")
+	if err:
+		print("ERR:")
+		for e in err:
+			print(f"\t{e}")
 	return
 
 
@@ -52,7 +53,7 @@ def main():
 
 	# makes sure the imput file is a file, and that is has the
 	# correct file extension
-	if not isfile(iFile) or not iFile.endswith(".txt"):
+	if not isfile(iFile) or not iFile.endswith(".json"):
 		usage(["Either an invalid file was given, or it was not a text file",
 			   f"The given file is: \"{iFile}\""])
 		exit(1)
