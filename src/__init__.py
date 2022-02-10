@@ -5,5 +5,4 @@ if __name__ == '__main__':
 
 from .typ import *
 from .util import *
-from .fileHandler import *
 

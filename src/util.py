@@ -67,7 +67,7 @@ def cleaner(li2d: list[list[chr]]) -> list[list[Tile]]:
 	# starts a loop over the li2d var
 	for li in li2d:
 		tmp: list[chr] = []
-		
+
 		# loops over the chr's in the li iterrator
 		for c in li:
 
@@ -78,7 +78,7 @@ def cleaner(li2d: list[list[chr]]) -> list[list[Tile]]:
 				tmp.append(r)
 			else:
 				raise ValueError
-		
+
 		# if this is not the first run the program will try
 		# to check whether the rows are of equal length
 		# if found not to be it throws an "AssertionError"
